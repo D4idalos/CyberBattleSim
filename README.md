@@ -159,6 +159,8 @@ docker run -it spinshot.azurecr.io/cyberbattle:$commit python -m cyberbattle.age
 
 ```bash
 docker build -t cyberbattle:1.1 .
+docker run -it --rm cyberbattle:1.1
+#or
 docker run -it -v "$(pwd)":/source --rm cyberbattle:1.1 python -m cyberbattle.agents.baseline.run
 ```
 
