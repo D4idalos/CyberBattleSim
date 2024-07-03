@@ -17,12 +17,14 @@ RUN activate cybersim
 RUN pyright
 RUN ./createstubs.sh
 COPY . .
+RUN conda init
+RUN echo "conda activate cybersim" >> ~/.bashrc
 
 # To build the docker image:
 #   docker build -t cyberbattle:1.1 .
 #
 # To run
-#   docker run -it --rm cyberbattle:1.1 bash
+#   docker run -it --rm cyberbattle:1.1
 #
 # Pushing to private repository
 #   docker login -u spinshot-team-token-writer --password-stdin spinshot.azurecr.io
